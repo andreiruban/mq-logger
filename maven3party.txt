@@ -1,0 +1,7 @@
+mvn org.apache.maven.plugins:maven-install-plugin:2.3.1:install-file -Dfile=dhbcore.jar -DgroupId=com.ibm -DartifactId=com.ibm.dhbcore -Dversion=7.5.0.2 -Dpackaging=jar -DlocalRepositoryPath=D:\Development\maven_repo
+
+mvn org.apache.maven.plugins:maven-install-plugin:2.3.1:install-file -Dfile=com.ibm.mqjms.jar -DgroupId=com.ibm -DartifactId=com.ibm.mqjms -Dversion=7.5.0.2 -Dpackaging=jar -DlocalRepositoryPath=D:\Development\maven_repo
+
+mvn org.apache.maven.plugins:maven-install-plugin:2.3.1:install-file -Dfile=com.ibm.mq.jmqi.jar -DgroupId=com.ibm -DartifactId=com.ibm.mq.jmqi -Dversion=7.5.0.2 -Dpackaging=jar -DlocalRepositoryPath=D:\Development\maven_repo
+
+mvn org.apache.maven.plugins:maven-install-plugin:2.3.1:install-file -Dfile=com.ibm.mq.headers.jar -DgroupId=com.ibm -DartifactId=com.ibm.mq.headers -Dversion=7.5.0.2 -Dpackaging=jar -DlocalRepositoryPath=D:\Development\maven_repo

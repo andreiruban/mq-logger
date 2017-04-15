@@ -1,0 +1,58 @@
+group 'oi.ruban'
+version '1.01.-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+//Gretty
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
+
+gretty {
+    port = 8090
+    debugPort = 5005
+    debugSuspend = true
+    contextPath = 'mqlogger'
+//    servletContainer = 'jetty9'
+    servletContainer = 'tomcat8'
+}
+
+dependencies {
+
+    //      IBM Websphere MQ jar from Maven Repository
+    compile 'com.ibm:com.ibm.mqjms:7.5.0.2'
+    compile 'com.ibm:com.ibm.mq.headers:7.5.0.2'
+    compile 'com.ibm:com.ibm.mq.jmqi:7.5.0.2'
+    compile 'com.ibm:com.ibm.dhbcore:7.5.0.2'
+
+    //      Spring Framework
+    compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+    compile 'org.springframework:spring-jms:4.1.6.RELEASE'
+    compile 'org.springframework:spring-test:4.1.6.RELEASE'
+    compile 'org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1'
+
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0-rc2'
+
+    compile 'javax.servlet:jstl:1.2'
+
+    //      include in compile only, exclude in the war
+    providedCompile 'javax.servlet:servlet-api:2.5'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
